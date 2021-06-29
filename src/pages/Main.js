@@ -1,18 +1,30 @@
 import React from 'react'
 
-export const Main = () => {
+// import ReactJson from 'react-json-view'
+ 
+
+export const Main = (props) => {
+    const json = {
+        "location": props.location,
+        "minCustomers": props.minCustPerHr,
+        'maxCustomers': props.maxCustPerHr,
+        'avgCookies': props.avgCookie,
+    }
+    const data = JSON.stringify(json)
     return (
       
-            <form class="bg-green-200">
+            <form className="bg-green-200">
                 <fieldset>
                 <label >
                     Create Cookie Stand
                 </label>
                     <div>
+                        
+                         
                         <div>
                             <div >
                                 <label >location</label>
-                                <input type="text" />
+                                <input type="text" name="location"  />
                             </div>
                         </div>
                         <div >
@@ -31,6 +43,8 @@ export const Main = () => {
                                 </div>
                                 <button className="bg-green-600 w-1/4">Create</button>
                             </div>
+                            <p>Report Table Coming Soon...</p>
+                            <p>{data}</p>
                         </div>
                     </div>
                 </fieldset>
