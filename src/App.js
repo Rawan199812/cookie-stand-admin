@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {Head}  from './pages/Head';
+import {Header}  from './pages/Header';
+import {Main}  from './pages/Main';
+import {Footer}  from './pages/Footer';
+import { useState } from 'react'
+
+
+import React from 'react';
 
 function App() {
+  const [title,setTitle] = useState('Cookie Stand Admin');
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Head  title={title}/>
+      <Header/>
+      <Main/>
+      <Footer/>
+      
+      
+      <h1>My first time ever</h1>
     </div>
   );
 }
